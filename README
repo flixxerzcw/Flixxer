@@ -1,0 +1,14 @@
+The backend of this Video Libary Application will create a foundation, managing user athentication, video uploads, comments, and tweets.
+It provides RESTful APIS for the fronted and supports real-time updates using WebSockets
+
+
+  Key Features
+•User Authentication: Register, log in, and manger user sessions(one admin)
+•Video Management: upload, retrieve, and manage videos
+•Comments: store and handles comments in the twitter feed
+•Twitter feed: manage tweets, mentions, hashtags, and real-time updates. 
+
+
+  Technoligies Used
+•Node.js 
+•MYSQL
