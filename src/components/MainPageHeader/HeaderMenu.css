@@ -1,0 +1,92 @@
+/* General menu styles */
+nav {
+  display: flex;
+  justify-content: center; /* Horizontally center the menu */
+  width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  border-radius: "8px";
+  margin: 30%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+/*   width: 200px; */
+}
+
+.menu-item {
+  position: relative; /* For positioning submenu */
+  border-radius: "8px";
+  padding: 10px 20px;
+  background-color: #000;
+/*   width: 200px; */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 1rem;
+    color: white; /* Menu text color */
+}
+
+.menu-item:hover {
+  background-color: #555;
+}
+
+/* Submenu styles */
+.submenu {
+  list-style-type: none;
+  border-radius: "4px";
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%; /* Position submenu below the main menu */
+  left: 0;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: visible;
+  width: 200px; /* Set a fixed width or adjust as needed */
+}
+
+.submenu-item {
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.submenu-item:hover {
+  background-color: #666;
+}
+
+.search-item {
+  display: flex; /* Align the search box horizontally */
+  align-items: center;
+  padding-left: 1rem; /* Space between the last menu item and the search box */
+}
+
+.search-box {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 1rem; /* Space between the last menu item and the search box */
+  transition: background-color 0.3s ease; /* Smooth transition */
+
+}
+
+.search-box::placeholder {
+  color: #ccc;
+}
+
+/* Optionally, you can add more hover or focus effects for the search box */
+.search-box:hover {
+  background-color: #555; /* Lighter background when hovering over search box */
+  border-color: #888; /* Optional border color change */
+}
+
+.search-box:focus {
+  background-color: #444; /* Darker background when focused */
+}

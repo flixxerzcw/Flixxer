@@ -1,0 +1,44 @@
+.embla {
+  width: 100%; /* Make the carousel take full width of the screen */
+  height: 90%; /* Make the carousel take full height of the screen */
+  margin: 0; /* Remove margin to take full space */
+  --slide-height: 100%; /* Set slide height to 100% to fill the height of the viewport */
+  --slide-spacing: 0rem; /* No spacing between slides */
+  --slide-size: 100%; /* Each slide will take up 100% of the width of the viewport */
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size); /* Ensure each slide takes up the full width */
+  min-width: 0;
+  height: 100%; /* Make sure each slide takes up full height */
+  display: flex;
+  justify-content: center; /* Center content horizontally in the slide */
+  align-items: center; /* Center content vertically in the slide */
+}
+.embla__slide__number {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--slide-height);
+  user-select: none;
+}
+
+.embla__slide__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensure images are properly sized */
+}

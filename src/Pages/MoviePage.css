@@ -1,0 +1,62 @@
+const movieDetailStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+  padding: '20px',
+  backgroundColor: '#000',
+};
+
+const videoSectionStyle = {
+  flex: 2,
+  marginRight: '20px',
+};
+
+const videoStyle = {
+  width: '100%',
+  borderRadius: '10px',
+};
+
+const detailsStyle = {
+  color: '#fff',
+  marginTop: '20px',
+};
+
+const movieTitleStyle = {
+  fontSize: '2rem',
+  fontWeight: 'bold',
+};
+
+const movieStatsStyle = {
+  fontSize: '1rem',
+  color: '#ff0000',
+  margin: '10px 0',
+};
+
+const movieMetaStyle = {
+  fontSize: '1rem',
+  color: '#fff',
+};
+
+const movieCastStyle = {
+  fontSize: '1rem',
+  color: '#fff',
+  margin: '10px 0',
+};
+
+const movieDescriptionStyle = {
+  fontSize: '1rem',
+  color: '#ccc',
+};
+
+const closeButtonStyle = {
+  position: 'absolute',
+  top: '20px',
+  right: '20px',
+  padding: '10px',
+  backgroundColor: '#ff0000',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer',
+};
