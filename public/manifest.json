@@ -1,0 +1,25 @@
+{
+  "short_name": "FLIXXER1",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "/Users/dmishra/Front-end/public/FLIXXER1.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/Users/dmishra/Front-end/public/FLIXXER1.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": " /Users/dmishra/Front-end/public/FLIXXER1.png ",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/Users/dmishra/Front-end/public/FLIXXER1.png",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
