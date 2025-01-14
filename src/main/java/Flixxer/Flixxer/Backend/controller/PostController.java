@@ -4,6 +4,7 @@ import Flixxer.Flixxer.Backend.models.Post;
 import Flixxer.Flixxer.Backend.repositories.PostRepository;
 import Flixxer.Flixxer.Backend.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,12 @@ public class PostController {
     @PostMapping(value="/posts/save/user/{userId}")
     public @ResponseBody Post savePostById(@RequestBody Post post, @PathVariable Long userId){
        return postService.savePostByUserId(post, userId);
+    }
+
+    @PostMapping("/posts/save/{userId}/{videoId}")
+    public ResponseEntity<Post> createPost(@PathVariable Long userId, @PathVariable Long videoId, @RequestBody Post post) {
+        Post savedPost = postService.savePostWithUserAndVideo(userId, videoId, post);
+        return ResponseEntity.ok(savedPost);
     }
 
 }

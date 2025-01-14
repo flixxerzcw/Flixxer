@@ -20,8 +20,8 @@ public class Video {
 
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private long ContentId;
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private long contentId;
 
         @Getter
         @Setter
@@ -49,22 +49,24 @@ public class Video {
         @Column
         private LocalDate releaseDate;
 
-@ManyToMany
-@JoinTable(
-        name = "video_genre"
-        , joinColumns = @JoinColumn(name = "video_id"),
-        inverseJoinColumns = @JoinColumn(name = "genre_id"
-                ))
+
+
+        @OneToMany(mappedBy = "video")
+        private Set<Post> posts = new HashSet<>();
+
+
+
+        @ManyToMany
         private List<Genre> genres;
 
 //list iterable
 
         public long getContentId() {
-        return ContentId;
+        return contentId;
     }
 
-    public void setContentId(long contentId) {
-        this.ContentId = contentId;
+        public void setContentId(long contentId) {
+        this.contentId = contentId;
     }
 }
 

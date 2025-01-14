@@ -12,7 +12,10 @@ public class Post {
     @Column
     private String message;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Video video;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
 
@@ -47,5 +50,7 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public void setVideo(Video video) { this.video = video; }
 
 }
