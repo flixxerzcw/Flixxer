@@ -2,6 +2,7 @@ package Flixxer.Flixxer.Backend.controller;
 
 import Flixxer.Flixxer.Backend.models.Post;
 import Flixxer.Flixxer.Backend.repositories.PostRepository;
+import Flixxer.Flixxer.Backend.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,37 +12,24 @@ import java.util.List;
 public class PostController {
 
     @Autowired
-    private PostRepository postRepository;
+    PostService postService;
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping(value="/posts")
-    public List<Post> getPosts(){
-        return postRepository.findAll();
+    @GetMapping(value="/posts/all")
+    public @ResponseBody List<Post> getAllPosts() {
+        return postService.findAllPosts();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+   @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value="/posts/save")
-    public String savePost(@RequestBody Post post){
-        postRepository.save(post);
-        return "Post saved!";
+    public @ResponseBody Post savePost(@RequestBody Post post){
+        return postService.savePost(post);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping(value="/posts/update/{id}")
-    public String updatePost(@PathVariable Long id,@RequestBody Post post){
-        Post updatePost = postRepository.findById(id).get();
-
-        updatePost.setMessage(post.getMessage());
-        postRepository.save(updatePost);
-        return "Post updated!";
-    }
-
-    @CrossOrigin(origins = "http://localhost:3000")
-    @DeleteMapping(value = "/posts/delete/{id}" )
-    public String deletePost(@PathVariable Long id) {
-        Post deletedPost = postRepository.findById(id).get();
-        postRepository.delete(deletedPost);
-        return "Post deleted";
+    @PostMapping(value="/posts/save/user/{userId}")
+    public @ResponseBody Post savePostById(@RequestBody Post post, @PathVariable Long userId){
+       return postService.savePostByUserId(post, userId);
     }
 
 }

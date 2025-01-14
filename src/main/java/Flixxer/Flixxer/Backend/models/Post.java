@@ -6,11 +6,15 @@ import jakarta.persistence.*;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
     private String message;
+
+    @ManyToOne
+    private User user;
+
 
     public Post() {
     }
@@ -35,4 +39,13 @@ public class Post {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

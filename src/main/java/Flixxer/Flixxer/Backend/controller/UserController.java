@@ -28,7 +28,7 @@ public class UserController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(value="/users/update/{id}")
-    public String updateUser(@PathVariable long id,@RequestBody User user){
+    public String updateUser(@PathVariable Long id,@RequestBody User user){
         User updatedUser = userRepository.findById(id).get();
         updatedUser.setUsername(user.getUsername());
         updatedUser.setFirstName(user.getFirstName());
@@ -44,7 +44,7 @@ public class UserController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping(value="/users/delete/{id}")
-    public String deleteUser(@PathVariable long id){
+    public String deleteUser(@PathVariable Long id){
         User deletedUser = userRepository.findById(id).get();
         userRepository.delete(deletedUser);
         return "Deleted user: " + deletedUser.getFirstName() + " " + deletedUser.getLastName();
