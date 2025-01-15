@@ -13,5 +13,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findAll();
 
+    List<Post> findPostsByVideoContentId(Long ContentId);
+
+
     //List<Post> findPostByUserId(Long userId);
 }

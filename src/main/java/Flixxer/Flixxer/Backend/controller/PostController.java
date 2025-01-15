@@ -1,5 +1,6 @@
 package Flixxer.Flixxer.Backend.controller;
 
+import Flixxer.Flixxer.Backend.models.HotTake;
 import Flixxer.Flixxer.Backend.models.Post;
 import Flixxer.Flixxer.Backend.repositories.PostRepository;
 import Flixxer.Flixxer.Backend.services.PostService;
@@ -38,5 +39,9 @@ public class PostController {
         Post savedPost = postService.savePostWithUserAndVideo(userId, videoId, post);
         return ResponseEntity.ok(savedPost);
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value="/posts/all/hotTake/{videoId}")
+    public @ResponseBody List<HotTake> getAllPost(@PathVariable Long videoId) {
+        return postService.gethotTakesbyVideoId(videoId);
+    }
 }
